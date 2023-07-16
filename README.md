@@ -19,7 +19,7 @@ HabitHive is a habit-tracking app designed to help you build a better life one h
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/HabitHive.git
+   git clone https://github.com/chavezucf/HabitHive.git
    
 
 2. Open the project in Xcode.
