@@ -18,13 +18,6 @@ struct HabitDetailView: View {
         ZStack {
             BackgroundGradient()
             VStack {
-                Text(habitName)
-                    .font(.largeTitle)
-                    .bold()
-                    .padding()
-                    .foregroundColor(HHColors.Black)
-
-                
                 Circle()
                     .trim(from: 0.0, to: CGFloat(min(progress, 1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
@@ -53,7 +46,7 @@ struct HabitDetailView: View {
             }
             .padding()
             .foregroundColor(HHColors.White)
-            .navigationTitle("Habit Details")
+            .navigationTitle(habitName)
             .navigationBarItems(trailing: Button("Delete") {
                 // Delete the habit
             })

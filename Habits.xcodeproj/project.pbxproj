@@ -15,8 +15,14 @@
 		CF299F7B2A5CBD1E00CF1C3F /* HabitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF299F7A2A5CBD1E00CF1C3F /* HabitsTests.swift */; };
 		CF299F852A5CBD1E00CF1C3F /* HabitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF299F842A5CBD1E00CF1C3F /* HabitsUITests.swift */; };
 		CF299F872A5CBD1E00CF1C3F /* HabitsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF299F862A5CBD1E00CF1C3F /* HabitsUITestsLaunchTests.swift */; };
-		CF299F942A6351BA00CF1C3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF299F932A6351BA00CF1C3F /* ContentView.swift */; };
 		CF299F972A63599A00CF1C3F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF299F962A63599A00CF1C3F /* Color.swift */; };
+		CF3C1A8F2A641BD300711D61 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1A8E2A641BD300711D61 /* HapticFeedback.swift */; };
+		CF3C1A912A641D9C00711D61 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1A902A641D9C00711D61 /* CustomTabBar.swift */; };
+		CF3C1A992A64227200711D61 /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1A972A64227200711D61 /* OnboardingContentView.swift */; };
+		CF3C1A9A2A64227200711D61 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1A982A64227200711D61 /* OnboardingView.swift */; };
+		CF3C1A9D2A6423B200711D61 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1A9C2A6423B200711D61 /* Habit.swift */; };
+		CF3C1A9F2A64246800711D61 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1A9E2A64246800711D61 /* Date.swift */; };
+		CF3C1AA22A64251000711D61 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1AA12A64251000711D61 /* HabitListView.swift */; };
 		CFEFB9382A635E4800AE61F1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB9372A635E4800AE61F1 /* DashboardView.swift */; };
 		CFEFB93A2A63611200AE61F1 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB9392A63611200AE61F1 /* AddHabitView.swift */; };
 		CFEFB93C2A63614000AE61F1 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB93B2A63614000AE61F1 /* HabitDetailView.swift */; };
@@ -24,6 +30,7 @@
 		CFEFB9402A63624500AE61F1 /* DailyReminderSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB93F2A63624500AE61F1 /* DailyReminderSetupView.swift */; };
 		CFEFB9422A63626B00AE61F1 /* NightlySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB9412A63626B00AE61F1 /* NightlySummaryView.swift */; };
 		CFEFB9442A636AF200AE61F1 /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB9432A636AF200AE61F1 /* HabitRowView.swift */; };
+		CFEFB9462A63FF5000AE61F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB9452A63FF5000AE61F1 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +63,14 @@
 		CF299F802A5CBD1E00CF1C3F /* HabitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF299F842A5CBD1E00CF1C3F /* HabitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsUITests.swift; sourceTree = "<group>"; };
 		CF299F862A5CBD1E00CF1C3F /* HabitsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CF299F932A6351BA00CF1C3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF299F962A63599A00CF1C3F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CF3C1A8E2A641BD300711D61 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		CF3C1A902A641D9C00711D61 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		CF3C1A972A64227200711D61 /* OnboardingContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
+		CF3C1A982A64227200711D61 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		CF3C1A9C2A6423B200711D61 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		CF3C1A9E2A64246800711D61 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		CF3C1AA12A64251000711D61 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		CFEFB9372A635E4800AE61F1 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		CFEFB9392A63611200AE61F1 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		CFEFB93B2A63614000AE61F1 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
@@ -65,6 +78,7 @@
 		CFEFB93F2A63624500AE61F1 /* DailyReminderSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReminderSetupView.swift; sourceTree = "<group>"; };
 		CFEFB9412A63626B00AE61F1 /* NightlySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightlySummaryView.swift; sourceTree = "<group>"; };
 		CFEFB9432A636AF200AE61F1 /* HabitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
+		CFEFB9452A63FF5000AE61F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,20 +130,23 @@
 			isa = PBXGroup;
 			children = (
 				CF299F662A5CBD1D00CF1C3F /* HabitsApp.swift */,
-				CF299F932A6351BA00CF1C3F /* ContentView.swift */,
-				CFEFB9372A635E4800AE61F1 /* DashboardView.swift */,
-				CFEFB93B2A63614000AE61F1 /* HabitDetailView.swift */,
-				CFEFB9392A63611200AE61F1 /* AddHabitView.swift */,
+				CFEFB9452A63FF5000AE61F1 /* ContentView.swift */,
+				CF3C1A9B2A64228900711D61 /* AddHabit */,
+				CF3C1A962A64227200711D61 /* Onboarding */,
+				CF3C1A952A64224B00711D61 /* Dashboard */,
+				CF3C1AA02A6424F600711D61 /* List */,
+				CFEFB9412A63626B00AE61F1 /* NightlySummaryView.swift */,
 				CFEFB93D2A63617200AE61F1 /* HabitCalendarView.swift */,
 				CF299F682A5CBD1D00CF1C3F /* Item.swift */,
 				CFEFB93F2A63624500AE61F1 /* DailyReminderSetupView.swift */,
 				CF299F6A2A5CBD1D00CF1C3F /* ContentView_OG.swift */,
 				CF299F6C2A5CBD1E00CF1C3F /* Assets.xcassets */,
 				CF299F6E2A5CBD1E00CF1C3F /* Habits.entitlements */,
+				CF3C1A8D2A641BBA00711D61 /* Utilities */,
 				CF299F952A63598800CF1C3F /* Extensions */,
 				CF299F6F2A5CBD1E00CF1C3F /* Preview Content */,
-				CFEFB9412A63626B00AE61F1 /* NightlySummaryView.swift */,
-				CFEFB9432A636AF200AE61F1 /* HabitRowView.swift */,
+				CF3C1A902A641D9C00711D61 /* CustomTabBar.swift */,
+				CF3C1A9C2A6423B200711D61 /* Habit.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -163,8 +180,52 @@
 			isa = PBXGroup;
 			children = (
 				CF299F962A63599A00CF1C3F /* Color.swift */,
+				CF3C1A9E2A64246800711D61 /* Date.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CF3C1A8D2A641BBA00711D61 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CF3C1A8E2A641BD300711D61 /* HapticFeedback.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CF3C1A952A64224B00711D61 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				CFEFB9372A635E4800AE61F1 /* DashboardView.swift */,
+				CFEFB9432A636AF200AE61F1 /* HabitRowView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		CF3C1A962A64227200711D61 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				CF3C1A972A64227200711D61 /* OnboardingContentView.swift */,
+				CF3C1A982A64227200711D61 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		CF3C1A9B2A64228900711D61 /* AddHabit */ = {
+			isa = PBXGroup;
+			children = (
+				CFEFB9392A63611200AE61F1 /* AddHabitView.swift */,
+			);
+			path = AddHabit;
+			sourceTree = "<group>";
+		};
+		CF3C1AA02A6424F600711D61 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				CFEFB93B2A63614000AE61F1 /* HabitDetailView.swift */,
+				CF3C1AA12A64251000711D61 /* HabitListView.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,16 +358,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFEFB9462A63FF5000AE61F1 /* ContentView.swift in Sources */,
+				CF3C1A912A641D9C00711D61 /* CustomTabBar.swift in Sources */,
+				CF3C1A8F2A641BD300711D61 /* HapticFeedback.swift in Sources */,
+				CF3C1A9A2A64227200711D61 /* OnboardingView.swift in Sources */,
 				CF299F692A5CBD1D00CF1C3F /* Item.swift in Sources */,
 				CFEFB93E2A63617200AE61F1 /* HabitCalendarView.swift in Sources */,
 				CFEFB9382A635E4800AE61F1 /* DashboardView.swift in Sources */,
+				CF3C1A9F2A64246800711D61 /* Date.swift in Sources */,
 				CFEFB93A2A63611200AE61F1 /* AddHabitView.swift in Sources */,
 				CFEFB9402A63624500AE61F1 /* DailyReminderSetupView.swift in Sources */,
 				CF299F672A5CBD1D00CF1C3F /* HabitsApp.swift in Sources */,
-				CF299F942A6351BA00CF1C3F /* ContentView.swift in Sources */,
+				CF3C1AA22A64251000711D61 /* HabitListView.swift in Sources */,
 				CF299F972A63599A00CF1C3F /* Color.swift in Sources */,
 				CFEFB9442A636AF200AE61F1 /* HabitRowView.swift in Sources */,
+				CF3C1A992A64227200711D61 /* OnboardingContentView.swift in Sources */,
 				CFEFB9422A63626B00AE61F1 /* NightlySummaryView.swift in Sources */,
+				CF3C1A9D2A6423B200711D61 /* Habit.swift in Sources */,
 				CFEFB93C2A63614000AE61F1 /* HabitDetailView.swift in Sources */,
 				CF299F6B2A5CBD1D00CF1C3F /* ContentView_OG.swift in Sources */,
 			);

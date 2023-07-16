@@ -18,13 +18,18 @@ struct AddHabitView: View {
         ZStack {
             BackgroundGradient()
             VStack {
-                Text("Customize your habit preferences")
-                    .font(.largeTitle)
-                    .padding()
-
-                TextField("Habit Name", text: $habitName)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                
+                VStack {
+                    Text("Customize your habit preferences")
+                        .font(.largeTitle)
+                        .padding()
+                    
+                    TextField("Habit Name", text: $habitName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                }
+                
+                Spacer()
 
                 Text("Choose Length (Days)")
                     .font(.title2)
@@ -37,7 +42,10 @@ struct AddHabitView: View {
                         })
                     }
                 }
-                .padding(.bottom)
+                .frame(height: 50)
+                .padding(.top, 25)
+                
+                Spacer()
 
                 Text("Select Reminder Time")
                     .font(.title2)
@@ -50,7 +58,9 @@ struct AddHabitView: View {
                         })
                     }
                 }
-
+                .frame(height: 50)
+                .padding(.top, 25)
+                
                 Spacer()
 
                 Button("Save Habit") {
@@ -61,6 +71,8 @@ struct AddHabitView: View {
                 .foregroundColor(.white)
                 .cornerRadius(10)
                 .padding(.bottom)
+                
+                Spacer()
             }
             .padding()
             .foregroundColor(HHColors.Black)
@@ -68,6 +80,7 @@ struct AddHabitView: View {
         }
     }
 }
+
 
 struct SelectableButton: View {
     var label: String
@@ -87,6 +100,7 @@ struct SelectableButton: View {
                 Spacer()
             }
             .padding()
+            
             .background(isSelected ? HHColors.Black : HHColors.Secondary)
             .cornerRadius(10)
         }

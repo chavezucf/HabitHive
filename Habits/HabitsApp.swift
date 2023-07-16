@@ -15,10 +15,10 @@ struct HabitsApp: App {
     var body: some Scene {
         WindowGroup {
             if isOnboarding {
+                OnboardingContentView()
+            } else {
                 ContentView()
                     .background(.green)
-            } else {
-                DashboardView()
             }
         }
         .modelContainer(for: Item.self)
