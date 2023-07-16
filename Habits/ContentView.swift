@@ -2,131 +2,78 @@
 //  ContentView.swift
 //  Habits
 //
-//  Created by Miguel Chavez on 7/10/23.
+//  Created by Miguel Chavez on 7/15/23.
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-    @StateObject private var subViewModel1 = SubView1Model()
-    
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    @State private var selectedTab = 0
     var body: some View {
-        NavigationView {
-            VStack{
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            VStack{
-                                Text(item.name)
-                                Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                            }
-                        } label: {
-                            Text(item.name)
-                        }
-                    }
-                    .onDelete(perform: deleteItems)
-                }
+        TabView(selection: $selectedTab) {
+            OnboardingView(imageName: "logo", headerText: "Welcome to HabitHive", descriptionText: "Your personal sidekick for creating and tracking habits.", buttonText: "Next") {
+                self.selectedTab += 1
             }
-            .sheet(isPresented: $subViewModel1.showingSheet) {
-                AddNewCar(viewModel: subViewModel1)
+                .tag(0)
+            OnboardingView(imageName: "logo", headerText: "Build Better Habits", descriptionText: "Create and customize your habit journey.", buttonText: "Next") {
+                self.selectedTab += 1
             }
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: {
-                        subViewModel1.showingSheet.toggle()
-                    }) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+                .tag(1)
+            OnboardingView(imageName: "logo", headerText: "Track Your Progress", descriptionText: "Keep track of your habits with an intuitive calendar view.", buttonText: "Get Started") {
+                self.isOnboarding = false
             }
-            Text("Select an item")
+                .tag(2)
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+        .onAppear {
+          setupAppearance()
         }
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
+    
+    func setupAppearance() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(HHColors.Primary)
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+      }
 }
 
-
-class SubView1Model: ObservableObject {
-    @Published var title: String = "Sub View 1"
-    @Published var showingSheet: Bool = false
-}
-
-struct SubView1: View {
-    @ObservedObject var viewModel: SubView1Model
+struct OnboardingView: View {
+    var imageName: String
+    var headerText: String
+    var descriptionText: String
+    var buttonText: String
+    var buttonAction: () -> Void
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
 
     var body: some View {
-        
-        Text(viewModel.title)
-        
-        Button(action: {
-            viewModel.showingSheet.toggle()
-        }) {
-            Text("Dismiss SubView1")
-        }
-    }
-}
-
-struct AddNewCar: View {
-    @Environment(\.modelContext) private var modelContext
-    @ObservedObject var viewModel: SubView1Model
-    @State private var name: String = ""
-    
-    var body: some View {
-        Form {
-            Section(header: Text("New Item")) {
-                
-                DataInput(title: "Name", userInput: $name)
+        VStack {
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .padding(40)
+            Text(headerText)
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.top, 50)
+                .foregroundColor(HHColors.Primary)
+            Text(descriptionText)
+                .font(.subheadline)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 50)
+                .padding(20)
+            Button(action: buttonAction) {
+                Text(buttonText)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
             }
-            
-            Button(action: addItem) {
-                Text("Add Item")
-                }
-            }
-    }
-    
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date(), name: name)
-            modelContext.insert(newItem)
-            viewModel.showingSheet.toggle()
+            .padding(.bottom, 50)
         }
     }
-    
 }
 
-struct DataInput: View {
-    
-    var title: String
-    @Binding var userInput: String
-    
-    var body: some View {
-        VStack(alignment: HorizontalAlignment.leading) {
-            Text(title)
-                .font(.headline)
-            TextField("Enter \(title)", text: $userInput)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-        }
-        .padding()
-    }
-}
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

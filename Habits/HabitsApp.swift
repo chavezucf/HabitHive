@@ -10,10 +10,16 @@ import SwiftData
 
 @main
 struct HabitsApp: App {
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isOnboarding {
+                ContentView()
+                    .background(.green)
+            } else {
+                DashboardView()
+            }
         }
         .modelContainer(for: Item.self)
     }
