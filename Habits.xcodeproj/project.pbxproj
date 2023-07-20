@@ -26,6 +26,11 @@
 		CF3C1AA42A64664C00711D61 /* AppearanceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1AA32A64664C00711D61 /* AppearanceConfigurator.swift */; };
 		CF3C1AA62A646A3A00711D61 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1AA52A646A3A00711D61 /* BackgroundGradient.swift */; };
 		CF3C1AA82A64753B00711D61 /* SelectableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C1AA72A64753B00711D61 /* SelectableButton.swift */; };
+		CF568F992A693F7A00798AB9 /* HabitStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF568F982A693F7A00798AB9 /* HabitStoreView.swift */; };
+		CF568F9B2A6940A400798AB9 /* HabitDetailsView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF568F9A2A6940A400798AB9 /* HabitDetailsView2.swift */; };
+		CF568F9E2A69428500798AB9 /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF568F9D2A69428500798AB9 /* HabitCardView.swift */; };
+		CF568FA12A69487100798AB9 /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF568FA02A69487100798AB9 /* CategoryCardView.swift */; };
+		CF568FA32A6948A700798AB9 /* RoadmapCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF568FA22A6948A700798AB9 /* RoadmapCardView.swift */; };
 		CFEFB9382A635E4800AE61F1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB9372A635E4800AE61F1 /* DashboardView.swift */; };
 		CFEFB93A2A63611200AE61F1 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB9392A63611200AE61F1 /* AddHabitView.swift */; };
 		CFEFB93C2A63614000AE61F1 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB93B2A63614000AE61F1 /* HabitDetailView.swift */; };
@@ -76,6 +81,11 @@
 		CF3C1AA32A64664C00711D61 /* AppearanceConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceConfigurator.swift; sourceTree = "<group>"; };
 		CF3C1AA52A646A3A00711D61 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 		CF3C1AA72A64753B00711D61 /* SelectableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableButton.swift; sourceTree = "<group>"; };
+		CF568F982A693F7A00798AB9 /* HabitStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStoreView.swift; sourceTree = "<group>"; };
+		CF568F9A2A6940A400798AB9 /* HabitDetailsView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsView2.swift; sourceTree = "<group>"; };
+		CF568F9D2A69428500798AB9 /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
+		CF568FA02A69487100798AB9 /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
+		CF568FA22A6948A700798AB9 /* RoadmapCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadmapCardView.swift; sourceTree = "<group>"; };
 		CFEFB9372A635E4800AE61F1 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		CFEFB9392A63611200AE61F1 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		CFEFB93B2A63614000AE61F1 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
@@ -238,8 +248,21 @@
 		CF568F972A693EC900798AB9 /* HabitStore */ = {
 			isa = PBXGroup;
 			children = (
+				CF568F982A693F7A00798AB9 /* HabitStoreView.swift */,
+				CF568F9A2A6940A400798AB9 /* HabitDetailsView2.swift */,
+				CF568F9F2A69485F00798AB9 /* CardViews */,
 			);
 			path = HabitStore;
+			sourceTree = "<group>";
+		};
+		CF568F9F2A69485F00798AB9 /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				CF568F9D2A69428500798AB9 /* HabitCardView.swift */,
+				CF568FA02A69487100798AB9 /* CategoryCardView.swift */,
+				CF568FA22A6948A700798AB9 /* RoadmapCardView.swift */,
+			);
+			path = CardViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,14 +396,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFEFB9462A63FF5000AE61F1 /* ContentView.swift in Sources */,
+				CF568F992A693F7A00798AB9 /* HabitStoreView.swift in Sources */,
 				CF3C1A912A641D9C00711D61 /* CustomTabBar.swift in Sources */,
 				CF3C1AA42A64664C00711D61 /* AppearanceConfigurator.swift in Sources */,
 				CF3C1A8F2A641BD300711D61 /* HapticFeedback.swift in Sources */,
+				CF568F9B2A6940A400798AB9 /* HabitDetailsView2.swift in Sources */,
 				CF3C1A9A2A64227200711D61 /* OnboardingView.swift in Sources */,
+				CF568FA12A69487100798AB9 /* CategoryCardView.swift in Sources */,
 				CF299F692A5CBD1D00CF1C3F /* Item.swift in Sources */,
 				CF3C1AA82A64753B00711D61 /* SelectableButton.swift in Sources */,
 				CFEFB9382A635E4800AE61F1 /* DashboardView.swift in Sources */,
 				CF3C1A9F2A64246800711D61 /* Date.swift in Sources */,
+				CF568F9E2A69428500798AB9 /* HabitCardView.swift in Sources */,
 				CFEFB93A2A63611200AE61F1 /* AddHabitView.swift in Sources */,
 				CFEFB9402A63624500AE61F1 /* DailyReminderSetupView.swift in Sources */,
 				CF299F672A5CBD1D00CF1C3F /* HabitsApp.swift in Sources */,
@@ -389,6 +416,7 @@
 				CF3C1AA62A646A3A00711D61 /* BackgroundGradient.swift in Sources */,
 				CFEFB9442A636AF200AE61F1 /* HabitRowView.swift in Sources */,
 				CF3C1A992A64227200711D61 /* OnboardingContentView.swift in Sources */,
+				CF568FA32A6948A700798AB9 /* RoadmapCardView.swift in Sources */,
 				CFEFB9422A63626B00AE61F1 /* NightlySummaryView.swift in Sources */,
 				CF3C1A9D2A6423B200711D61 /* Habit.swift in Sources */,
 				CFEFB93C2A63614000AE61F1 /* HabitDetailView.swift in Sources */,
