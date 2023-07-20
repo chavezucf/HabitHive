@@ -6,35 +6,38 @@
 //
 
 import SwiftUI
-struct HabitDetailView: View {
-    let habitName: String
-    @State private var progress: Double = 0.5
-    @State private var daysMissed: Int = 2
-    @State private var currentStreak: Int = 5
-    @State private var longestStreak: Int = 7
-    @State private var endDate: Date = Calendar.current.date(byAdding: .day, value: 30, to: Date())!
+import SwiftData
 
+struct HabitDetailView: View {
+    @Environment(\.presentationMode) var presentation
+    @Environment(\.modelContext) private var modelContext
+    var habit: SaveHabit
+    var habitProgress: CGFloat
+    init(habit: SaveHabit) {
+        self.habit = habit
+        self.habitProgress = 0.75
+    }
     var body: some View {
         ZStack {
             BackgroundGradient()
             VStack {
                 Circle()
-                    .trim(from: 0.0, to: CGFloat(min(progress, 1.0)))
+                    .trim(from: 0.0, to: CGFloat(min(habitProgress, 1.0)))
                     .stroke(style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
                     .foregroundColor(HHColors.Black)
                     .rotationEffect(Angle(degrees: 270.0))
                     .overlay(content: {
                         VStack{
-                            Text("\(Int(progress * 30))/30")
+                            Text("\(Int(habitProgress * 30))/30")
                                 .font(.title)
                                 .foregroundColor(HHColors.Black)
                                 .bold()
                             
                             Group {
-                                Text("Days missed: \(daysMissed)")
-                                Text("Current streak: \(currentStreak) days")
-                                Text("Longest streak: \(longestStreak) days")
-                                Text("Ends on: \(format(date: endDate))")
+                                Text("Days missed: \(habit.daysMissed)")
+                                Text("Current streak: \(habit.currentStreak) days")
+                                Text("Longest streak: \(habit.longestStreak) days")
+                                Text("Ends on: \(format(date: habit.endDate))")
                             }
                             .font(.subheadline)
                             .foregroundColor(HHColors.Gray)
@@ -43,14 +46,25 @@ struct HabitDetailView: View {
                     .padding(.top, 70)
 
                 Spacer()
+                Button(action: deleteHabit) {
+                    Text("Delete Habit")
+                }
+                .padding()
+                .background(.red)
+                .foregroundColor(HHColors.White)
+                .cornerRadius(10)
+                .padding(.bottom)
+                Spacer()
             }
             .padding()
             .foregroundColor(HHColors.White)
-            .navigationTitle(habitName)
-            .navigationBarItems(trailing: Button("Delete") {
-                // Delete the habit
-            })
+            .navigationBarTitle(habit.name, displayMode: .inline)
         }
+    }
+    
+    private func deleteHabit() {
+        self.presentation.wrappedValue.dismiss()
+        modelContext.delete(habit)
     }
 
     func format(date: Date) -> String {
@@ -62,6 +76,7 @@ struct HabitDetailView: View {
 
 
 
-#Preview {
-    HabitDetailView(habitName: "DO IT")
-}
+//@MainActor
+//#Preview {
+//    HabitDetailView(habit: sampleData[0])
+//}

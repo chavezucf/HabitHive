@@ -6,25 +6,29 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     @State private var selectedTab = "Habits"
-    @State private var showAddHabitView = false
+    @Environment(\.modelContext) private var modelContext
+    @Query private var saveHabits: [SaveHabit]
+    @StateObject private var addHabitViewModel = AddHabitViewModel()
     
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
                 if selectedTab == "Habits" {
-                    DashboardView(habits: tempHabits)
+                    DashboardView()
                 } else if selectedTab == "List" {
-                    HabitListView(habits: tempHabits)
+                    HabitListView()
                 }
             }
-            CustomTabBar(selectedTab: $selectedTab, showAddHabitView: $showAddHabitView)
+            CustomTabBar(selectedTab: $selectedTab, showAddHabitView: $addHabitViewModel.showingSheet)
         }
-        .sheet(isPresented: $showAddHabitView) {
-            AddHabitView()
+        .sheet(isPresented: $addHabitViewModel.showingSheet) {
+            AddHabitView(viewModel: addHabitViewModel)
         }
+        
         .edgesIgnoringSafeArea(.bottom)
     }
 }

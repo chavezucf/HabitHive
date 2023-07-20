@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+struct VisualEffectView: UIViewRepresentable {
+    var effect: UIVisualEffect?
+    
+    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView {
+        return UIVisualEffectView(effect: effect)
+    }
+    
+    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) {
+        uiView.effect = effect
+    }
+}
+
 struct CustomTabBar: View {
     @Binding var selectedTab: String
     @Binding var showAddHabitView: Bool
@@ -38,7 +50,8 @@ struct CustomTabBar: View {
         }
         .padding(.horizontal, 10)
         .padding(.bottom, 20)
-        .background(HHColors.Black)
+        .background(Color.orange.opacity(0.25))
+        .background(VisualEffectView(effect: UIBlurEffect(style: .systemThinMaterialDark)))
     }
 }
 
@@ -65,5 +78,14 @@ struct TabBarButton: View {
 }
 
 #Preview {
-    CustomTabBar(selectedTab: .constant("Habits"), showAddHabitView: .constant(false))
+    NavigationView {
+        ZStack{
+            BackgroundGradient()
+            VStack{
+                Spacer()
+                CustomTabBar(selectedTab: .constant("Habits"), showAddHabitView: .constant(false))
+            }
+            .navigationTitle("Habits")
+        }
+    }
 }

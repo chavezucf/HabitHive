@@ -11,6 +11,9 @@ import SwiftData
 @main
 struct HabitsApp: App {
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    init() {
+        AppearanceConfigurator.configureNavigationBar()
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -18,9 +21,8 @@ struct HabitsApp: App {
                 OnboardingContentView()
             } else {
                 ContentView()
-                    .background(.green)
             }
         }
-        .modelContainer(for: Item.self)
+        .modelContainer(for: SaveHabit.self)
     }
 }

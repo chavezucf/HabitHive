@@ -7,7 +7,13 @@
 
 import SwiftUI
 
+class AddHabitViewModel: ObservableObject {
+    @Published var showingSheet: Bool = false
+}
+
 struct AddHabitView: View {
+    @Environment(\.modelContext) private var modelContext
+    @ObservedObject var viewModel: AddHabitViewModel
     @State private var habitName: String = ""
     @State private var length: Int = 30
     let lengthChoices = [30, 60, 90]
@@ -20,97 +26,79 @@ struct AddHabitView: View {
             VStack {
                 
                 VStack {
-                    Text("Customize your habit preferences")
+                    Text("Customize Your Habit Preferences")
                         .font(.largeTitle)
+                        .multilineTextAlignment(.center)
                         .padding()
                     
                     TextField("Habit Name", text: $habitName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
+                        .font(.title)
+                        .padding(10)
+                        .background(RoundedRectangle(cornerRadius: 8)
+                            .foregroundColor(HHColors.Tertiary))
+              
+                        .foregroundColor(.black)
                 }
                 
-                Spacer()
-
-                Text("Choose Length (Days)")
-                    .font(.title2)
-                    .padding(.top)
-
-                HStack {
-                    ForEach(lengthChoices, id: \.self) { choice in
-                        SelectableButton(label: "\(choice)", isSelected: choice == length, action: {
-                            length = choice
-                        })
+                
+                VStack {
+                    Text("Choose Length (Days)")
+                        .font(.title2)
+                        .padding(.top)
+                    
+                    HStack {
+                        ForEach(lengthChoices, id: \.self) { choice in
+                            SelectableButton(label: "\(choice)", isSelected: choice == length, action: {
+                                length = choice
+                            })
+                        }
                     }
+                    
+                    .frame(height: 50)
+                    .padding(.top, 5)
                 }
-                .frame(height: 50)
-                .padding(.top, 25)
-                
                 Spacer()
-
-                Text("Select Reminder Time")
-                    .font(.title2)
-                    .padding(.top)
-
-                HStack {
-                    ForEach(reminderTimes, id: \.0) { time, icon in
-                        SelectableButton(label: time, icon: icon, isSelected: time == reminderTime, action: {
-                            reminderTime = time
-                        })
+                
+                VStack {
+                    Text("Select Reminder Time")
+                        .font(.title2)
+                        .padding(.top)
+                    
+                    HStack {
+                        ForEach(reminderTimes, id: \.0) { time, icon in
+                            SelectableButton(label: time, icon: icon, isSelected: time == reminderTime, action: {
+                                reminderTime = time
+                            })
+                        }
                     }
+                    .frame(height: 50)
+                    .padding(.top, 15)
                 }
-                .frame(height: 50)
-                .padding(.top, 25)
-                
                 Spacer()
 
-                Button("Save Habit") {
-                    // Save the habit
+                Button(action: addHabit) {
+                    Text("Save Habit")
                 }
                 .padding()
-                .background(HHColors.Black)
-                .foregroundColor(.white)
+                .background(HHColors.Primary)
+                .foregroundColor(HHColors.Black)
                 .cornerRadius(10)
                 .padding(.bottom)
                 
                 Spacer()
             }
             .padding()
-            .foregroundColor(HHColors.Black)
-            .background(HHColors.Primary)
+            .foregroundColor(HHColors.Primary)
+            .background(HHColors.Black)
         }
     }
-}
-
-
-struct SelectableButton: View {
-    var label: String
-    var icon: String? = nil
-    var isSelected: Bool
-    var action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            VStack {
-                if let icon = icon {
-                    Image(systemName: icon)
-                        .foregroundColor(isSelected ? HHColors.White : HHColors.Black)
-                }
-                Text(label)
-                    .foregroundColor(isSelected ? HHColors.White : HHColors.Black)
-                Spacer()
-            }
-            .padding()
-            
-            .background(isSelected ? HHColors.Black : HHColors.Secondary)
-            .cornerRadius(10)
-        }
-        .buttonStyle(PlainButtonStyle())
+    
+    private func addHabit() {
+        let newHabit = SaveHabit(name: habitName, startDate: Date(), endDate: Date(), progress: 0, length: length, isCurrent: true)
+        modelContext.insert(newHabit)
+        viewModel.showingSheet.toggle()
     }
 }
 
 
 
-
-#Preview {
-    AddHabitView()
-}

@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HabitListView: View {
-    var habits: [Habit]
+    @Query private var habits: [SaveHabit]
 
     var body: some View {
         NavigationView {
@@ -17,29 +18,33 @@ struct HabitListView: View {
                 List {
                     Section(header: Text("Current Habits")) {
                         ForEach(habits.filter { $0.isCurrent }) { habit in
-                            NavigationLink(destination: HabitDetailView(habitName: habit.name)) {
+                            NavigationLink(destination: HabitDetailView(habit: habit)) {
                                 HabitCell(habit: habit)
                             }
+                            .listRowBackground(HHColors.Tertiary)
                         }
                     }
 
                     Section(header: Text("Previous Habits")) {
                         ForEach(habits.filter { !$0.isCurrent }) { habit in
-                            NavigationLink(destination: HabitDetailView(habitName: habit.name)) {
+                            NavigationLink(destination: HabitDetailView(habit: habit)) {
                                 HabitCell(habit: habit)
                             }
+                            .listRowBackground(HHColors.Tertiary)
                         }
                     }
                 }
                 .listStyle(GroupedListStyle())
-                .navigationTitle("Habits")
+                .navigationTitle("All Habits")
+                .scrollContentBackground(.hidden)
             }
         }
+        .accentColor(HHColors.White)
     }
 }
 
 struct HabitCell: View {
-    var habit: Habit
+    var habit: SaveHabit
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -53,5 +58,6 @@ struct HabitCell: View {
 
 
 #Preview {
-    HabitListView(habits: tempHabits)
+    HabitListView()
+        .modelContainer(for: SaveHabit.self, inMemory: true)
 }
