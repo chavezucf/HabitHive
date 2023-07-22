@@ -20,7 +20,7 @@ struct ContentView: View {
                 if selectedTab == "Habits" {
                     DashboardView()
                 } else if selectedTab == "List" {
-                    HabitListView()
+                    HabitStoreView()
                 }
             }
             CustomTabBar(selectedTab: $selectedTab, showAddHabitView: $addHabitViewModel.showingSheet)

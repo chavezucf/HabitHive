@@ -31,6 +31,14 @@
 		CF568F9E2A69428500798AB9 /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF568F9D2A69428500798AB9 /* HabitCardView.swift */; };
 		CF568FA12A69487100798AB9 /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF568FA02A69487100798AB9 /* CategoryCardView.swift */; };
 		CF568FA32A6948A700798AB9 /* RoadmapCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF568FA22A6948A700798AB9 /* RoadmapCardView.swift */; };
+		CF7A48C32A6BEAEA00647B23 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFD747552A6BE82600AE882E /* Inter-Regular.ttf */; };
+		CF7A48C42A6BEAEA00647B23 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFD747562A6BE82600AE882E /* Poppins-Bold.ttf */; };
+		CF7A48C52A6BEAEA00647B23 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFD747572A6BE82600AE882E /* Inter-SemiBold.ttf */; };
+		CFBBA8B42A6BF3A500457E6C /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBA8B32A6BF3A500457E6C /* Shape.swift */; };
+		CFBBA8B62A6BF44300457E6C /* HHColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBBA8B52A6BF44300457E6C /* HHColors.swift */; };
+		CFD7475C2A6BE82600AE882E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD747502A6BE82600AE882E /* CustomButton.swift */; };
+		CFD7475E2A6BE82600AE882E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD747522A6BE82600AE882E /* CustomTextField.swift */; };
+		CFD7475F2A6BE82600AE882E /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD747532A6BE82600AE882E /* CustomFont.swift */; };
 		CFEFB9382A635E4800AE61F1 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB9372A635E4800AE61F1 /* DashboardView.swift */; };
 		CFEFB93A2A63611200AE61F1 /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB9392A63611200AE61F1 /* AddHabitView.swift */; };
 		CFEFB93C2A63614000AE61F1 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEFB93B2A63614000AE61F1 /* HabitDetailView.swift */; };
@@ -86,6 +94,14 @@
 		CF568F9D2A69428500798AB9 /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
 		CF568FA02A69487100798AB9 /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
 		CF568FA22A6948A700798AB9 /* RoadmapCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadmapCardView.swift; sourceTree = "<group>"; };
+		CFBBA8B32A6BF3A500457E6C /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		CFBBA8B52A6BF44300457E6C /* HHColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHColors.swift; sourceTree = "<group>"; };
+		CFD747502A6BE82600AE882E /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CFD747522A6BE82600AE882E /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CFD747532A6BE82600AE882E /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		CFD747552A6BE82600AE882E /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		CFD747562A6BE82600AE882E /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		CFD747572A6BE82600AE882E /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		CFEFB9372A635E4800AE61F1 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		CFEFB9392A63611200AE61F1 /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		CFEFB93B2A63614000AE61F1 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
@@ -159,6 +175,7 @@
 				CF299F6E2A5CBD1E00CF1C3F /* Habits.entitlements */,
 				CF3C1A8D2A641BBA00711D61 /* Utilities */,
 				CF299F952A63598800CF1C3F /* Extensions */,
+				CFD7474F2A6BE82600AE882E /* Styles */,
 				CF299F6F2A5CBD1E00CF1C3F /* Preview Content */,
 				CF299F682A5CBD1D00CF1C3F /* Item.swift */,
 				CF3C1A9C2A6423B200711D61 /* Habit.swift */,
@@ -196,6 +213,7 @@
 			children = (
 				CF299F962A63599A00CF1C3F /* Color.swift */,
 				CF3C1A9E2A64246800711D61 /* Date.swift */,
+				CFBBA8B32A6BF3A500457E6C /* Shape.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +281,28 @@
 				CF568FA22A6948A700798AB9 /* RoadmapCardView.swift */,
 			);
 			path = CardViews;
+			sourceTree = "<group>";
+		};
+		CFD7474F2A6BE82600AE882E /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				CFD747542A6BE82600AE882E /* Fonts */,
+				CFD747502A6BE82600AE882E /* CustomButton.swift */,
+				CFD747522A6BE82600AE882E /* CustomTextField.swift */,
+				CFD747532A6BE82600AE882E /* CustomFont.swift */,
+				CFBBA8B52A6BF44300457E6C /* HHColors.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		CFD747542A6BE82600AE882E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CFD747552A6BE82600AE882E /* Inter-Regular.ttf */,
+				CFD747562A6BE82600AE882E /* Poppins-Bold.ttf */,
+				CFD747572A6BE82600AE882E /* Inter-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +409,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7A48C32A6BEAEA00647B23 /* Inter-Regular.ttf in Resources */,
+				CF7A48C42A6BEAEA00647B23 /* Poppins-Bold.ttf in Resources */,
+				CF7A48C52A6BEAEA00647B23 /* Inter-SemiBold.ttf in Resources */,
 				CF299F712A5CBD1E00CF1C3F /* Preview Assets.xcassets in Resources */,
 				CF299F6D2A5CBD1E00CF1C3F /* Assets.xcassets in Resources */,
 			);
@@ -397,8 +440,11 @@
 			files = (
 				CFEFB9462A63FF5000AE61F1 /* ContentView.swift in Sources */,
 				CF568F992A693F7A00798AB9 /* HabitStoreView.swift in Sources */,
+				CFD7475C2A6BE82600AE882E /* CustomButton.swift in Sources */,
 				CF3C1A912A641D9C00711D61 /* CustomTabBar.swift in Sources */,
 				CF3C1AA42A64664C00711D61 /* AppearanceConfigurator.swift in Sources */,
+				CFD7475E2A6BE82600AE882E /* CustomTextField.swift in Sources */,
+				CFBBA8B42A6BF3A500457E6C /* Shape.swift in Sources */,
 				CF3C1A8F2A641BD300711D61 /* HapticFeedback.swift in Sources */,
 				CF568F9B2A6940A400798AB9 /* HabitDetailsView2.swift in Sources */,
 				CF3C1A9A2A64227200711D61 /* OnboardingView.swift in Sources */,
@@ -408,6 +454,7 @@
 				CFEFB9382A635E4800AE61F1 /* DashboardView.swift in Sources */,
 				CF3C1A9F2A64246800711D61 /* Date.swift in Sources */,
 				CF568F9E2A69428500798AB9 /* HabitCardView.swift in Sources */,
+				CFD7475F2A6BE82600AE882E /* CustomFont.swift in Sources */,
 				CFEFB93A2A63611200AE61F1 /* AddHabitView.swift in Sources */,
 				CFEFB9402A63624500AE61F1 /* DailyReminderSetupView.swift in Sources */,
 				CF299F672A5CBD1D00CF1C3F /* HabitsApp.swift in Sources */,
@@ -415,6 +462,7 @@
 				CF299F972A63599A00CF1C3F /* Color.swift in Sources */,
 				CF3C1AA62A646A3A00711D61 /* BackgroundGradient.swift in Sources */,
 				CFEFB9442A636AF200AE61F1 /* HabitRowView.swift in Sources */,
+				CFBBA8B62A6BF44300457E6C /* HHColors.swift in Sources */,
 				CF3C1A992A64227200711D61 /* OnboardingContentView.swift in Sources */,
 				CF568FA32A6948A700798AB9 /* RoadmapCardView.swift in Sources */,
 				CFEFB9422A63626B00AE61F1 /* NightlySummaryView.swift in Sources */,

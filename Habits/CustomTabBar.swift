@@ -50,8 +50,7 @@ struct CustomTabBar: View {
         }
         .padding(.horizontal, 10)
         .padding(.bottom, 20)
-        .background(Color.orange.opacity(0.25))
-        .background(VisualEffectView(effect: UIBlurEffect(style: .systemThinMaterialDark)))
+        .background(VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark)))
     }
 }
 

@@ -9,9 +9,15 @@ import SwiftUI
 
 
 struct BackgroundGradient: View {
-    //Color(hex: "#FFC640")
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [HHColors.Primary , HHColors.Secondary, HHColors.Secondary]), startPoint: .topLeading, endPoint: .bottomTrailing)
+        LinearGradient(gradient: Gradient(colors: [HHColors.LightGray , HHColors.BackgroundL, HHColors.BackgroundL]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .edgesIgnoringSafeArea(.all)
+    }
+}
+
+struct TestBackgroundGradient: View {
+    var body: some View {
+        LinearGradient(gradient: Gradient(colors: [HHColors.Primary , HHColors.Secondary, HHColors.Primary]), startPoint: .topLeading, endPoint: .bottomTrailing)
             .edgesIgnoringSafeArea(.all)
     }
 }

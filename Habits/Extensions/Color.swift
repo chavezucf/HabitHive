@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-struct HHColors {
-    static let Primary = Color(hex: "#FFB400")
-    static let Secondary = Color(hex: "#FFEABF")
-    static let Tertiary = Color(hex: "#FFF3DF")
-    static let LightAccent = Color(hex: "#87B9E5")
-    static let Accent = Color(hex: "#167AD3")
-    static let White = Color(hex: "#FFFBFE")
-    static let Black = Color(hex: "#151415")
-    static let LightGray = Color(hex: "#BDBCBE")
-    static let Gray = Color(hex: "#565254")
-}
-
-
 extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
